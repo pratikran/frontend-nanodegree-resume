@@ -66,7 +66,7 @@ The International Name challenge in Lesson 2 where you'll create a function that
 $(document).ready(function() {
   $('button').click(function() {
     var lName = $('#name').html();
-    var iName = inName(lName) || function(){};
+    var iName = octopus.inName(lName) || function(){};
     $('#name').html(iName);  
   });
 });
@@ -123,6 +123,10 @@ function initializeMap() {
   locationFinder() returns an array of every location string from the JSONs
   written for bio, education, and work.
   */
+  var bio = octopus.getBio();
+  var work = octopus.getWork();
+  var education = octopus.getEducationDtls();
+
   function locationFinder() {
 
     // initializes an empty array
